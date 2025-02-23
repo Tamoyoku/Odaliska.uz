@@ -1,65 +1,77 @@
-/* Общие стили для body */
+/* Стили для страницы */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, red, black, orange); /* Градиент от красного к черному и оранжевому */
+    background-size: cover;  /* Чтобы фон заполнил всю страницу и не повторялся */
+    background-attachment: fixed; /* Чтобы фон оставался фиксированным при прокрутке */
+    color: white;  /* Белый цвет текста на фоне */
 }
+
+/* Стили для круглой кнопки */
+.contact-button {
+    position: fixed;           /* Фиксируем кнопку на экране */
+    bottom: 20px;              /* Отступ от нижнего края */
+    left: 20px;                /* Отступ от левого края */
+    width: 60px;               /* Ширина кнопки */
+    height: 60px;              /* Высота кнопки */
+    background-color: #e60000; /* Красный фон кнопки */
+    border-radius: 50%;        /* Сделать кнопку круглой */
+    display: flex;             /* Используем flexbox для центрирования */
+    justify-content: center;   /* Центрирование содержимого по горизонтали */
+    align-items: center;       /* Центрирование содержимого по вертикали */
+    color: white;              /* Белый цвет текста */
+    font-size: 24px;           /* Размер шрифта */
+    text-decoration: none;     /* Убираем подчеркивание у ссылки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Легкая тень для кнопки */
+    z-index: 1000;             /* Кнопка будет поверх других элементов */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+}
+
+/* Эффект при наведении на кнопку */
+.contact-button:hover {
+    background-color: #d10000; /* Более темный красный при наведении */
+    transform: scale(1.1);      /* Легкое увеличение кнопки */
+}
+
+
 
 /* Стили для баннера */
 .banner {
-    background-color: #333;  /* Темный фон баннера */
-    color: white;            /* Белый цвет текста */
-    text-align: center;      /* Центрирование текста */
-    padding: 10px 0;         /* Внутренние отступы сверху и снизу */
-    width: 100%;             /* Баннер будет растягиваться на всю ширину экрана */
-    position: fixed;         /* Фиксируем баннер вверху */
-    top: 0;                  /* Располагаем баннер на верхней части экрана */
-    left: 0;                 /* Прижимаем баннер к левой границе */
-    z-index: 1000;           /* Обеспечиваем, чтобы баннер всегда был сверху */
-    box-sizing: border-box;  /* Чтобы padding не выходил за пределы ширины */
+    background-color: rgba(51, 51, 51, 0.5);  /* Черный цвет с прозрачностью 50% */
+    color: white;                              /* Белый цвет текста */
+    text-align: center;                        /* Центрирование текста */
+    padding: 10px 0;                           /* Внутренние отступы сверху и снизу */
+    width: 100%;                               /* Баннер будет растягиваться на всю ширину экрана */
+    position: fixed;                           /* Фиксируем баннер вверху */
+    top: 0;                                    /* Располагаем баннер на верхней части экрана */
+    left: 0;                                   /* Прижимаем баннер к левой границе */
+    z-index: 1000;                             /* Обеспечиваем, чтобы баннер всегда был сверху */
+    box-sizing: border-box;                    /* Чтобы padding не выходил за пределы ширины */
+    backdrop-filter: blur(8px);                /* Размытие фона на 8px */
 }
 
 /* Стили для текста баннера */
 .banner-text {
-    font-size: 20px;         /* Размер текста 20px */
-    margin: 0;               /* Убираем отступы вокруг текста */
+    font-size: 20px;                           /* Размер текста 20px */
+    margin: 0;                                 /* Убираем отступы вокруг текста */
 }
+
 
 /* Контент страницы */
 .content {
-    padding-top: 60px;       /* Отступ сверху, чтобы контент не перекрывался баннером */
+    padding-top: 250px;       /* Отступ сверху, чтобы контент не перекрывался баннером */
 }
 
-/* Адаптивность: медиазапрос для экрана до 768px */
-@media (max-width: 768px) {
-    .banner-text {
-        font-size: 18px;  /* Уменьшаем размер шрифта на мобильных устройствах */
-    }
-}
-
-/* Адаптивность: медиазапрос для экранов до 480px */
-@media (max-width: 480px) {
-    .banner-text {
-        font-size: 16px;  /* Еще больше уменьшаем размер шрифта на маленьких экранах */
-    }
-}
-.banner-text {
-    font-size: 20px;         /* Размер текста 20px */
-    margin: 0;               /* Убираем отступы вокруг текста */
-}
-
-/* Контейнер для карточек */
+/* Контейнер для карточек товаров */
 .product-container {
-    display: flex;               /* Горизонтальное выравнивание карточек */
-    justify-content: space-between; /* Расстояние между карточками */
-    gap: 20px;                   /* Отступ между карточками */
-    width: 80%;                  /* Задаем ширину контейнера */
-    margin: 0 auto;              /* Центрируем контейнер */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px; /* Отступ сверху для карточек, чтобы они не прилипали к контенту */
+    padding: 0 20px;  /* Добавляем отступы по бокам контейнера карточек */
 }
 
 /* Карточка товара */
@@ -87,10 +99,6 @@ body {
 /* Информация о товаре */
 .product-info {
     padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
@@ -99,7 +107,6 @@ body {
     font-size: 1.6em;
     font-weight: bold;
     margin: 10px 0;
-    color: #333;
 }
 
 /* Описание товара */
@@ -107,13 +114,12 @@ body {
     font-style: italic;
     color: #666;
     margin: 10px 0;
-    font-size: 1em;
 }
 
 /* Цена товара */
 .product-price {
     font-size: 1.4em;
-    color: #e60000; /* Красный цвет для цены */
+    color: #e60000;
     font-weight: bold;
     margin: 15px 0;
 }
@@ -129,7 +135,6 @@ body {
     font-weight: bold;
     border-radius: 5px;
     margin-top: 10px;
-    transition: background-color 0.3s ease;
 }
 
 /* При наведении на кнопку */
@@ -137,16 +142,27 @@ body {
     background-color: #d10000;
 }
 
-/* Медиазапрос для мобильных устройств */
+/* Адаптивность: медиазапрос для экрана до 768px */
 @media (max-width: 768px) {
     .product-container {
-        flex-direction: column;   /* Изменяем расположение карточек на вертикальное */
-        align-items: center;      /* Центрируем карточки по горизонтали */
-        gap: 20px;                /* Отступ между карточками */
+        flex-direction: column;
+        align-items: center;
     }
 
     .product-card {
-        width: 90%;               /* Увеличиваем ширину карточки на мобильных устройствах */
-        max-width: 350px;         /* Максимальная ширина карточки */
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+/* Адаптивность: медиазапрос для экранов до 480px */
+@media (max-width: 480px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 95%;
     }
 }
