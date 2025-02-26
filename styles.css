@@ -1,168 +1,172 @@
-/* Стили для страницы */
+/* Общие стили */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, red, black, orange); /* Градиент от красного к черному и оранжевому */
-    background-size: cover;  /* Чтобы фон заполнил всю страницу и не повторялся */
-    background-attachment: fixed; /* Чтобы фон оставался фиксированным при прокрутке */
-    color: white;  /* Белый цвет текста на фоне */
+    font-family: Arial, sans-serif; /* Используем простой шрифт для текста */
+    margin: 0; /* Убираем отступы по умолчанию */
+    padding: 0; /* Убираем паддинги по умолчанию */
+    background: linear-gradient(135deg, #ff0000, #121212, #8b0000); /* Устанавливаем градиентный фон от красного через черный к темно-красному */
+    color: #fff; /* Белый цвет текста */
+    height: 100%; /* Устанавливаем высоту на весь экран */
+    display: flex; /* Используем Flexbox для выравнивания элементов */
+    flex-direction: column; /* Располагаем элементы по вертикали */
 }
 
-/* Стили для круглой кнопки */
-.contact-button {
-    position: fixed;           /* Фиксируем кнопку на экране */
-    bottom: 20px;              /* Отступ от нижнего края */
-    left: 20px;                /* Отступ от левого края */
-    width: 60px;               /* Ширина кнопки */
-    height: 60px;              /* Высота кнопки */
-    background-color: #e60000; /* Красный фон кнопки */
-    border-radius: 50%;        /* Сделать кнопку круглой */
-    display: flex;             /* Используем flexbox для центрирования */
-    justify-content: center;   /* Центрирование содержимого по горизонтали */
-    align-items: center;       /* Центрирование содержимого по вертикали */
-    color: white;              /* Белый цвет текста */
-    font-size: 24px;           /* Размер шрифта */
-    text-decoration: none;     /* Убираем подчеркивание у ссылки */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Легкая тень для кнопки */
-    z-index: 1000;             /* Кнопка будет поверх других элементов */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+/* Ссылки */
+a {
+    color: #ff0000; /* Устанавливаем красный цвет для текста ссылок */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
 }
 
-/* Эффект при наведении на кнопку */
-.contact-button:hover {
-    background-color: #d10000; /* Более темный красный при наведении */
-    transform: scale(1.1);      /* Легкое увеличение кнопки */
+a:hover {
+    text-decoration: underline; /* Подчеркиваем ссылку при наведении */
 }
 
-
-
-/* Стили для баннера */
-.banner {
-    background-color: rgba(51, 51, 51, 0.5);  /* Черный цвет с прозрачностью 50% */
-    color: white;                              /* Белый цвет текста */
-    text-align: center;                        /* Центрирование текста */
-    padding: 10px 0;                           /* Внутренние отступы сверху и снизу */
-    width: 100%;                               /* Баннер будет растягиваться на всю ширину экрана */
-    position: fixed;                           /* Фиксируем баннер вверху */
-    top: 0;                                    /* Располагаем баннер на верхней части экрана */
-    left: 0;                                   /* Прижимаем баннер к левой границе */
-    z-index: 1000;                             /* Обеспечиваем, чтобы баннер всегда был сверху */
-    box-sizing: border-box;                    /* Чтобы padding не выходил за пределы ширины */
-    backdrop-filter: blur(8px);                /* Размытие фона на 8px */
+/* Шапка сайта */
+header {
+    display: flex; /* Используем Flexbox для выравнивания элементов в шапке */
+    justify-content: space-between; /* Размещаем элементы с отступами по краям */
+    padding: 10px 20px; /* Добавляем внутренние отступы для шапки */
+    background-color: rgba(26, 26, 26, 0.8); /* Полупрозрачный темный фон */
+    position: sticky; /* Фиксируем шапку при прокрутке */
+    top: 0; /* Шапка будет на верхней границе экрана */
+    z-index: 1000; /* Устанавливаем высокий уровень слоя, чтобы шапка была поверх других элементов */
 }
 
-/* Стили для текста баннера */
-.banner-text {
-    font-size: 20px;                           /* Размер текста 20px */
-    margin: 0;                                 /* Убираем отступы вокруг текста */
+/* Логотип */
+.logo-image {
+    width: 50px; /* Устанавливаем фиксированную ширину логотипа */
+    height: auto; /* Автоматически подстраиваем высоту, сохраняя пропорции */
 }
 
-
-/* Контент страницы */
-.content {
-    padding-top: 250px;       /* Отступ сверху, чтобы контент не перекрывался баннером */
+/* Меню навигации */
+nav ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем паддинги списка */
+    display: flex; /* Используем Flexbox для горизонтального расположения элементов */
 }
 
-/* Контейнер для карточек товаров */
-.product-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 40px; /* Отступ сверху для карточек, чтобы они не прилипали к контенту */
-    padding: 0 20px;  /* Добавляем отступы по бокам контейнера карточек */
+nav ul li {
+    margin: 0 10px; /* Добавляем отступы между элементами списка */
+}
+
+nav ul li a {
+    font-size: 18px; /* Устанавливаем размер шрифта для текста ссылок в меню */
+}
+
+/* Главная секция */
+.main-section {
+    text-align: center; /* Выравниваем текст по центру */
+    padding: 0px; /* Добавляем отступы для секции */
+}
+
+.main-image {
+    width: 100%; /* Ширина изображения на всю ширину родительского элемента */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+/* Секция с кнопками */
+.button-grid {
+    padding: 30px; /* Добавляем отступы для секции с кнопками */
+    text-align: center; /* Выравниваем кнопки по центру */
+}
+
+.button-container {
+    display: grid; /* Используем CSS Grid для расположения кнопок */
+    grid-template-columns: repeat(2, 1fr); /* 3 колонки одинаковой ширины */
+    gap: 10px; /* Добавляем промежутки между кнопками */
+    
+}
+
+.button-item {
+    background-color: #1a1a1a; /* Темный фон для кнопки */
+    color: white; /* Белый текст */
+    border: 2px solid #ff0000; /* Красная обводка */
+    padding: 15px 20px; /* Добавляем внутренние отступы */
+    font-size: 16px; /* Устанавливаем размер шрифта */
+    cursor: pointer; /* Курсор при наведении */
+    border-radius: 5px; /* Сглаживаем углы кнопки */
+    transition: background-color 0.3s, transform 0.3s; /* Анимация при наведении */
+}
+
+.button-item:hover {
+    background-color: #ff0000; /* Красный фон при наведении */
+    transform: scale(1.05); /* Увеличиваем размер кнопки при наведении */
+}
+
+.button-item:active {
+    background-color: #8b0000; /* Темный красный фон при активном нажатии */
+}
+
+.catalog h2 .icon {
+    width: 20px; /* Установите нужный размер картинки */
+    height: 20px; /* Установите нужный размер картинки */
+    margin-left: 10px; /* Отступ от текста до картинки */
+}
+
+/* Секция каталога товаров */
+.catalog {
+    padding: 20px; /* Добавляем отступы вокруг каталога */
+}
+
+.catalog h2 {
+    font-size: 24px; /* Устанавливаем размер шрифта для заголовка */
+    text-align: center; /* Выравниваем заголовок по центру */
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+}
+
+.product-grid {
+    display: grid; /* Используем CSS Grid для расположения товаров */
+    grid-template-columns: 1fr 1fr; /* Создаем 2 колонки одинаковой ширины */
+    gap: 10px; /* Добавляем промежутки между элементами */
 }
 
 /* Карточка товара */
 .product-card {
-    width: 300px;
-    background-color: #fff;
+    background-color: #1a1a1a; /* Устанавливаем темный фон для карточки */
+    border: 2px solid #ff0000; /* Устанавливаем красную рамку для карточки */
+    padding: 15px; /* Добавляем отступы внутри карточки */
+    text-align: center; /* Выравниваем текст внутри карточки по центру */
+    transition: transform 0.3s ease; /* Добавляем анимацию для трансформации */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    transition: transform 0.3s ease;
 }
 
-/* При наведении карточка слегка увеличивается */
 .product-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Увеличиваем размер карточки при наведении */
 }
 
-/* Изображение товара */
 .product-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%; /* Ширина изображения на всю ширину карточки */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin-bottom: 10px; /* Добавляем отступ снизу от изображения */
 }
 
-/* Информация о товаре */
-.product-info {
-    padding: 15px;
-    text-align: center;
-}
-
-/* Название товара */
 .product-name {
-    font-size: 1.6em;
-    font-weight: bold;
-    margin: 10px 0;
+    font-size: 18px; /* Устанавливаем размер шрифта для названия товара */
+    color: white; /* Белый цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
 }
 
-/* Описание товара */
 .product-description {
-    font-style: italic;
-    color: #666;
-    margin: 10px 0;
+    font-size: 14px; /* Устанавливаем размер шрифта для описания товара */
+    color: white; /* Белый цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
 }
 
-/* Цена товара */
 .product-price {
-    font-size: 1.4em;
-    color: #e60000;
-    font-weight: bold;
-    margin: 15px 0;
+    font-size: 18px; /* Устанавливаем размер шрифта для цены */
+    color: #ff0000; /* Красный цвет для цены */
 }
 
-/* Кнопка "Купить" */
-.buy-button {
-    display: block;
-    text-align: center;
-    background-color: #e60000;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 10px;
+/* Подвал */
+footer {
+    background-color: rgba(26, 26, 26, 0.8); /* Полупрозрачный темный фон для подвала */
+    padding: 20px; /* Добавляем отступы для подвала */
+    text-align: center; /* Выравниваем текст по центру */
 }
 
-/* При наведении на кнопку */
-.buy-button:hover {
-    background-color: #d10000;
+footer .footer-content {
+    margin-bottom: 10px; /* Отступ снизу для контента в подвале */
 }
 
-/* Адаптивность: медиазапрос для экрана до 768px */
-@media (max-width: 768px) {
-    .product-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-card {
-        width: 90%;
-        max-width: 350px;
-    }
-}
-
-/* Адаптивность: медиазапрос для экранов до 480px */
-@media (max-width: 480px) {
-    .product-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-card {
-        width: 95%;
-    }
+footer .social-media a {
+    margin: 0 10px; /* Добавляем отступы между ссылками социальных сетей */
 }
