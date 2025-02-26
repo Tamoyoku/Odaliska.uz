@@ -1,39 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
+    <!-- Мета-теги для корректной работы на мобильных устройствах -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Cards</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Каталог Работы</title>
+    
+    <!-- Подключаем внешний файл стилей (CSS) -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Баннер -->
-    <div class="banner">
-        <p class="banner-text">Это пример баннера с текстом размером 20px!</p>
-    </div>
-    <div class="product-container">
-        <!-- Первая карточка товара -->
-        <div class="product-card">
-            <img src="./img/banner.jpg" alt="Product Image" class="product-image">
-            <div class="product-info">
-                <h2 class="product-name">Product Name 1</h2>
-                <p class="product-description">This is a short description of the first product. It can include features, benefits, and other useful information.</p>
-                <p class="product-price">$199.99</p>
-                <a href="#" class="buy-button">Buy Now</a>
-            </div>
-        </div>
 
-        <!-- Вторая карточка товара -->
-        <div class="product-card">
-            <img src="./img/banner.jpg" alt="Product Image" class="product-image">
-            <div class="product-info">
-                <h2 class="product-name">Product Name 2</h2>
-                <p class="product-description">This is a short description of the second product. It can include features, benefits, and other useful information.</p>
-                <p class="product-price">$249.99</p>
-                <a href="#" class="buy-button">Buy Now</a>
+    <!-- Шапка сайта -->
+    <header>
+        <!-- Логотип сайта (с картинкой) -->
+        <div class="logo">
+            <img src="./img/logo.png" alt="Логотип" class="logo-image"> <!-- Логотип, размер 50px -->
+        </div>
+        
+        <!-- Меню навигации -->
+        <nav>
+            <ul>
+                <li><a href="#leave-resume">Оставить анкету</a></li> <!-- Ссылка на раздел "Оставить анкету" -->
+                <li><a href="#home">Главная</a></li> <!-- Ссылка на главную секцию -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Главная секция с изображением -->
+    <section id="home" class="main-section">
+        <!-- Изображение главной секции -->
+        <img src="./img/shapka.avif" alt="Main Image" class="main-image">
+    </section>
+
+<!-- Секция с кнопками -->
+<section class="button-grid">
+    <div class="button-container">
+        <button class="button-item">Ташкент</button>
+        <button class="button-item">Андижан</button>
+        <button class="button-item">Бухара</button>
+        <button class="button-item">Джизах</button>
+        <button class="button-item">Кашкадарья</button>
+        <button class="button-item">Навоий</button>
+        <button class="button-item">Наманган</button>
+        <button class="button-item">Самарканд</button>
+        <button class="button-item">Сурхандарья</button>
+        <button class="button-item">Фергана</button>
+        <button class="button-item">Хорезмская</button>
+        <button class="button-item">Сырдарьинская</button>
+    </div>
+</section>
+
+
+    <!-- Секция каталога товаров (кандидатов) -->
+    <section class="catalog">
+        <h2>Выбери<img src="./img/hot.gif" alt="Картинка" class="icon">
+        </h2> <!-- Заголовок секции -->
+
+        <!-- Контейнер для сетки товаров (2 колонки) -->
+        <div class="product-grid">
+            <!-- Товар 1 -->
+            <div class="product-card">
+                <img src="./img/photo.jpg" alt="Товар 1" class="product-image"> <!-- Изображение товара -->
+                <h3 class="product-name">Имя Товара 1</h3> <!-- Название товара -->
+                <p class="product-description">Описание товара 1</p> <!-- Описание товара -->
+                <p class="product-price">1000 ₽</p> <!-- Цена товара -->
+            </div>
+            
+            <!-- Товар 2 -->
+            <div class="product-card">
+                <img src="./img/photo.jpg" alt="Товар 2" class="product-image"> <!-- Изображение товара -->
+                <h3 class="product-name">Имя Товара 2</h3> <!-- Название товара -->
+                <p class="product-description">Описание товара 2</p> <!-- Описание товара -->
+                <p class="product-price">1500 ₽</p> <!-- Цена товара -->
+            </div>
+            
+            <!-- Товар 3 -->
+            <div class="product-card">
+                <img src="./img/photo.jpg" alt="Товар 3" class="product-image"> <!-- Изображение товара -->
+                <h3 class="product-name">Имя Товара 3</h3> <!-- Название товара -->
+                <p class="product-description">Описание товара 3</p> <!-- Описание товара -->
+                <p class="product-price">1200 ₽</p> <!-- Цена товара -->
+            </div>
+            
+            <!-- Товар 4 -->
+            <div class="product-card">
+                <img src="./img/photo.jpg" alt="Товар 4" class="product-image"> <!-- Изображение товара -->
+                <h3 class="product-name">Имя Товара 4</h3> <!-- Название товара -->
+                <p class="product-description">Описание товара 4</p> <!-- Описание товара -->
+                <p class="product-price">1800 ₽</p> <!-- Цена товара -->
+            </div>
+            
+            <!-- Товар 5 -->
+            <div class="product-card">
+                <img src="./img/photo.jpg" alt="Товар 5" class="product-image"> <!-- Изображение товара -->
+                <h3 class="product-name">Имя Товара 5</h3> <!-- Название товара -->
+                <p class="product-description">Описание товара 5</p> <!-- Описание товара -->
+                <p class="product-price">900 ₽</p> <!-- Цена товара -->
+            </div>
+            
+            <!-- Товар 6 -->
+            <div class="product-card">
+                <img src="./img/photo.jpg" alt="Товар 6" class="product-image"> <!-- Изображение товара -->
+                <h3 class="product-name">Имя Товара 6</h3> <!-- Название товара -->
+                <p class="product-description">Описание товара 6</p> <!-- Описание товара -->
+                <p class="product-price">1100 ₽</p> <!-- Цена товара -->
             </div>
         </div>
-    </div>
-    <a href="mailto:your-email@example.com" class="contact-button">📧</a>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="footer-content">
+            <!-- Контактная информация -->
+            <p>Контакты: example@mail.com</p> 
+            <!-- Ссылка на информацию о сайте -->
+            <p>Информация о сайте: <a href="#">Подробнее</a></p>
+            
+            <!-- Социальные сети -->
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
